@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Navbar.css";
-import { BsSliders, BsChevronDown } from "react-icons/bs"; //BsSliders2
+import { BsSliders, BsChevronDown } from "react-icons/bs"; 
 import { useDispatch, useSelector } from "react-redux";
 import { dataSelect } from "../actions/action";
 
@@ -38,6 +38,7 @@ const Navbar = () => {
       localStorage.setItem("order", e.target.value);
     }
   };
+  
 
   useEffect(() => {
     if (groups === "user") {
@@ -73,6 +74,7 @@ const Navbar = () => {
                   onChange={(e) => handleGroups(e, true)}
                   name="group"
                   id="group"
+                  style={{cursor:"pointer"}}
                 >
                   <option value="status">Status</option>
                   <option value="user">User</option>
@@ -87,9 +89,10 @@ const Navbar = () => {
                   onChange={(e) => handleGroups(e, false)}
                   name="order"
                   id="order"
+                  style={{cursor:"pointer"}}
                 >
                   <option value="priority">Priority</option>
-                  <option value="title">Title</option>
+                  <option value="title" >Title</option>
                 </select>
               </div>
             </div>

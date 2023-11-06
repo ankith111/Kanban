@@ -3,5 +3,9 @@
   padding: 0;
   block-size: border-box;
   font-family: 'Montserrat', sans-serif;
-  background-color: whitesmoke;
-}
+  background-color: white;
+ 
+  }
+  body{
+    overflow-x:hidden;
+    }

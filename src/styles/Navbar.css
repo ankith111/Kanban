@@ -17,6 +17,7 @@
     height: 35px;
     padding: 5px 5px;
     justify-content: space-evenly;
+    cursor: pointer;
 }
 
 .dropDown {

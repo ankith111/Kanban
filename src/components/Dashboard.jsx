@@ -7,17 +7,17 @@ import profile from "../images/profile.png";
 
 const Dashboard = () => {
   const { dataSelected, user } = useSelector((state) => state.dataSelectSlice);
-
+   
   return (
     dataSelected && (
-      <div className="container" style={{ justifyContent: "space-evenly" }}>
+      <div className="container" style={{ justifyContent: "space-evenly"  }}>
         {dataSelected.map((element, index) => {
           return (
             <>
               <div
                 key={index}
                 className="dashboard"
-                style={{ backgroundColor: "whitesmoke" }}
+                style={{ backgroundColor: "ghostwhite" }}
               >
                 <div className="cardHeading1">
                   <div
@@ -25,7 +25,9 @@ const Dashboard = () => {
                     style={{ display: "flex", alignItems: "center" }}
                   >
                     {!user ? (
-                      <BsReception4 />
+                      (element.priority == 4) ? 
+                      <img style={{width:"20px"}}src="https://static-00.iconduck.com/assets.00/software-update-urgent-icon-2048x1743-hg3j1kpu.png" />
+                      :<BsReception4/>
                     ) : (
                       <>
                         <div className="image">
@@ -52,6 +54,7 @@ const Dashboard = () => {
                         id={element.id}
                         title={element.title}
                         tags={element.tag}
+                        status={element.priority}
                       />
                     );
                   })}
